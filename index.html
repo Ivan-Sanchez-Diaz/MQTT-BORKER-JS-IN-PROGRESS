@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green House</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>    
+            <li><a href="#display">Display</a></li>
+            <li><a href="#interact">Interact</a></li>
+        </ul>
+    </nav>
+
+    <section class="header text-center" id="home">
+        <div class="container container-narrow">
+            <i class='bx bx-terminal'></i><h1>IOT-MQTT</h1>
+            <p>MQTT broker that receives all the messages from a greenhouse and then displays them graphically while sending the data to a PostgreSQL database.</p>
+        </div>
+    </section>
+
+    <section id="display">
+        <div class="container-square">
+            <h2 class="text-center">Display</h2>
+            <div class="split aling">
+                <div class="bg-darker square">
+                </div>
+                <div class="bg-darker square">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interact">
+        <div class="container-square">
+            <h2 class="text-center">To Interact</h2>
+            <div class="split aling">
+                <div class="bg-darker square">
+                    <div class="interact">
+                        <h2>Send</h2>
+                        <p>(you have to have mosquitto installed, link <a href="https://mosquitto.org/download/" target="_blank">here</a>*) to send through mqtt you need -h which is the server, in this case we are using a free server for testing, you need -T which is the topic, -P which is the port and finally -M which is the message.
+                        </p>
+                        <h2>CMD</h2>
+                        <p> > mosquitto_pub -h test.mosquitto.org -t casa/datos -p 1883 -m "anything"</p>  
+                        <div class="card send">
+                            <i class='bx bx-zoom-in'></i>
+                        </div> 
+                    </div>     
+                </div>
+                <div class="bg-darker square">
+                    <div class="interact">
+                        <h2>Receive</h2>
+                        <p>(you have to have mosquitto installed, link <a href="https://mosquitto.org/download/" target="_blank">here</a>*) to receive through mqtt you need -h which is the server, in this case we are using a free server for testing, you need -T which is the topic, -P which is the port.</p>
+                        <h2>CMD</h2>
+                        <p> > mosquitto_sub -h test.mosquitto.org -t casa/datos -p 1883</p>
+                        <div class="card">
+                            <i class='bx bx-zoom-in'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+</html>

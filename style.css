@@ -1,0 +1,260 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+:root{
+  --body-color: #191919;
+  --body-color-lighter: #252525;
+  --body-font: 'Bebas Neue',cursive;
+  --text-color:white;
+  --br: 12px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: white;
+  line-height: 1.6;
+}
+
+.header{
+  margin-top: 10px;
+  padding-top: 5rem;
+}
+
+
+nav{
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid white;
+  background-color: var(--body-color);
+  z-index: 1000;
+  background-color: rgb(20, 20,20);
+  display: flex;
+  align-items: center;
+}
+
+nav ul{
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li{
+  list-style: none;
+  margin-right: 1rem;
+}
+
+nav ul li a{
+  padding: .5rem;
+  text-decoration: none;
+  color: white;
+  transition: all .4s ease;
+}
+
+nav ul li a:hover{
+  background-color: var(--body-color-lighter);
+  border-radius: 12px;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: 300;
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.text-center{
+  text-align: center;
+}
+
+section{
+  padding: 4rem 0;
+  @media (min-width: 40em) {
+    section {
+      padding: 1rem 0;
+    }
+  }
+}
+
+.container{
+  margin-inline: auto;
+  width: min(90%, 40.5rem);
+}
+
+.split{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 40em) {
+  section{
+    padding: 1rem 0;
+  }
+  body{
+    line-height: 1;
+  }
+  .split{
+    flex-direction: row;
+  }
+
+  .split > * {
+    flex-basis: 100%;
+  }
+
+  .split > * + * {
+    margin-left: 2em;
+  }
+}
+
+h2,
+h3,
+p {
+  margin-bottom: 1em;
+}
+
+.bg-darker{
+  margin-top: 1em;
+  background-color: rgba(0, 0,0, .4);
+  border-radius: var(--br);
+  padding: 1em;
+}
+
+@media (min-width: 40em) {
+  .bg-darker{
+    margin-top: 0;
+  }
+}
+
+.square{
+  position: relative;
+  width: 95%;
+}
+
+.square::after{
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.aling{
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 40em) {
+  .square{
+    min-width: 360px;
+    max-width: 500px;
+  }
+
+  .split{
+    margin-inline: 2rem;
+  }
+}
+
+.interact h2,p{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-inline: .5rem;
+}
+
+.interact a{
+  text-decoration: none;
+}
+
+.interact h3{
+  margin: 0;
+  padding: 0;
+  padding-inline: .5rem;
+  margin:0.5rem 0;
+}
+.interact{
+  position: absolute;
+  width: 90%;
+  height: 90%;
+}
+
+.interact p{
+  font-size: .9rem;
+  margin-bottom: 1em;
+}
+
+i{
+  font-size: 4em;
+  font-weight: 100;
+  transition: all .2s ease;
+}
+
+.card{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid white;
+  position: absolute;
+  left:40%;
+  background-color: var(--body-color);
+  height: 20%;
+  width: 20%;
+  border-radius: 12px;
+  margin-inline: auto;
+  margin-top: 1em;
+  font-family: 'Roboto Mono', monospace;
+  transition: all .4s ease;
+  font-size: .8rem;
+}
+
+.card:hover{
+  width: 120%;
+  left:-9%;
+}
+
+.card:hover i{
+  opacity: 0;
+}
+
+.card::after{
+  position: absolute;
+  content: "mosquitto_sub -h test.mosquitto.org -t casa/datos -p 1883";
+  margin: 0;
+  display: none;
+}
+
+.card:hover::after{
+  display: inline-block;
+}
+
+.send::after{
+  position: absolute;
+  content: "mosquitto_pub -h test.mosquitto.org -t casa/datos -p 1883 -m anything";
+  margin: 0;
+  display: none;
+}
+
+
+
+
+
