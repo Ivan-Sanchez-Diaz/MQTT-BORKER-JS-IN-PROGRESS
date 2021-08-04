@@ -30,6 +30,7 @@ body{
 .header{
   margin-top: 10px;
   padding-top: 5rem;
+  pointer-events: none;
 }
 
 
@@ -86,6 +87,7 @@ h1{
 }
 .text-center{
   text-align: center;
+  pointer-events: none;
 }
 
 section{
@@ -178,6 +180,7 @@ p {
   margin: 0;
   padding: 0;
   padding-inline: .5rem;
+  pointer-events: none;
 }
 
 .interact a{
@@ -213,7 +216,7 @@ i{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid white;
+  border: 2px solid white;
   position: absolute;
   left:40%;
   background-color: var(--body-color);
@@ -230,6 +233,7 @@ i{
 .card:hover{
   width: 120%;
   left:-9%;
+  padding-left: 2rem;
 }
 
 .card:hover i{
@@ -252,6 +256,34 @@ i{
   content: "mosquitto_pub -h test.mosquitto.org -t casa/datos -p 1883 -m anything";
   margin: 0;
   display: none;
+}
+
+.display{
+  display: flex;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.display h2{
+  position: absolute;
+
+}
+
+.track{
+  stroke: transparent;
+  fill:none;
+}
+
+.progress {
+  fill: none;
+  stroke: limegreen;
+  stroke-width: 10px;
+  transition: ease-out all .4s;
+  transform-origin: center;
+  transform: rotate(-90deg);
 }
 
 
